@@ -48,7 +48,7 @@ function initializeUppy() {
     debug: true,
     autoProceed: false,
     restrictions: {
-      allowedFileTypes: ['image/*', 'video/*'],
+      allowedFileTypes: ['image/*', 'video/*', '.heic', '.heif', '.mov'],
     },
     locale: {
       strings: {
@@ -141,6 +141,34 @@ function initializeUppy() {
           sessionId: sessionId
         }
       }
+      
+      // Create placeholder preview for HEIC and MOV files
+      const fileName = currentFile.name.toLowerCase()
+      const isHEIC = fileName.endsWith('.heic') || fileName.endsWith('.heif')
+      const isMOV = fileName.endsWith('.mov')
+      
+      if (isHEIC) {
+        // Create placeholder for HEIC files (image icon)
+        modifiedFile.preview = 'data:image/svg+xml,' + encodeURIComponent(`
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <rect width="200" height="200" fill="#f0f0f0"/>
+            <text x="100" y="85" font-family="Arial" font-size="48" fill="#666" text-anchor="middle">📷</text>
+            <text x="100" y="130" font-family="Arial" font-size="16" fill="#999" text-anchor="middle">HEIC Image</text>
+            <text x="100" y="150" font-family="Arial" font-size="12" fill="#aaa" text-anchor="middle">${currentFile.name}</text>
+          </svg>
+        `)
+      } else if (isMOV) {
+        // Create placeholder for MOV files (video icon)
+        modifiedFile.preview = 'data:image/svg+xml,' + encodeURIComponent(`
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <rect width="200" height="200" fill="#f0f0f0"/>
+            <text x="100" y="85" font-family="Arial" font-size="48" fill="#666" text-anchor="middle">🎥</text>
+            <text x="100" y="130" font-family="Arial" font-size="16" fill="#999" text-anchor="middle">MOV Video</text>
+            <text x="100" y="150" font-family="Arial" font-size="12" fill="#aaa" text-anchor="middle">${currentFile.name}</text>
+          </svg>
+        `)
+      }
+      
       return modifiedFile
     }
   })
@@ -150,7 +178,7 @@ function initializeUppy() {
     target: '#uppy',
     proudlyDisplayPoweredByUppy: false,
     height: 470,
-    note: 'Resim ve videolar, dosya başına 5TB\'a kadar',
+    note: 'Resim ve videolar (HEIC, MOV dahil), dosya başına 5TB\'a kadar',
   })
 
   uppy.use(Tus, {

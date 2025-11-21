@@ -10,6 +10,7 @@ A web application built with Hono and Bun that allows wedding guests to upload p
 - ✅ **Large File Support**: Can handle files up to 5TB (Google Drive limit)
 - ✅ **Mobile Friendly**: Responsive design optimized for mobile and desktop
 - ✅ **Beautiful UI**: Custom-styled Uppy dashboard with wedding-appropriate branding
+- ✅ **HEIC & MOV Support**: Accepts HEIC/HEIF images and MOV videos from iOS devices
 
 ## Tech Stack
 
