@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  weddingpics:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weddingpics-app
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount the uploads directory to persist data
+      - ./uploads:/app/uploads
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
