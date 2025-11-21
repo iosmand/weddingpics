@@ -1,0 +1,246 @@
+/* Custom styles for Uppy integration with Tailwind design */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Override Uppy styles to match the design */
+#uppy .uppy-Dashboard-inner {
+  border: 2px dashed #e6dbdf !important;
+  border-radius: 1rem !important;
+  background: transparent !important;
+}
+
+.dark #uppy .uppy-Dashboard-inner {
+  border-color: #44343a !important;
+}
+
+#uppy .uppy-Dashboard-AddFiles {
+  border: none !important;
+  background: transparent !important;
+}
+
+#uppy .uppy-Dashboard-AddFiles-title {
+  font-weight: 700 !important;
+  color: #181113 !important;
+  font-size: 1rem !important;
+}
+
+.dark #uppy .uppy-Dashboard-AddFiles-title {
+  color: #f8f6f6 !important;
+}
+
+#uppy .uppy-Dashboard-note {
+  color: #89616f !important;
+  font-size: 0.875rem !important;
+}
+
+.dark #uppy .uppy-Dashboard-note {
+  color: #a18c93 !important;
+}
+
+#uppy .uppy-Dashboard-browse {
+  color: #ee2b6c !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+#uppy .uppy-Dashboard-browse:hover {
+  color: #d92560 !important;
+}
+
+/* File item styling */
+#uppy .uppy-Dashboard-Item {
+  border: 1px solid #e6dbdf !important;
+  border-radius: 0.5rem !important;
+  background: #ffffff !important;
+}
+
+.dark #uppy .uppy-Dashboard-Item {
+  border-color: #44343a !important;
+  background: #2d161d !important;
+}
+
+#uppy .uppy-Dashboard-Item-name {
+  color: #181113 !important;
+}
+
+.dark #uppy .uppy-Dashboard-Item-name {
+  color: #f8f6f6 !important;
+}
+
+#uppy .uppy-Dashboard-Item-status {
+  color: #89616f !important;
+}
+
+.dark #uppy .uppy-Dashboard-Item-status {
+  color: #a18c93 !important;
+}
+
+/* Progress bar */
+#uppy .uppy-Dashboard-Item-progress {
+  background: #e6dbdf !important;
+  border-radius: 9999px !important;
+}
+
+.dark #uppy .uppy-Dashboard-Item-progress {
+  background: #44343a !important;
+}
+
+#uppy .uppy-Dashboard-Item-progressIndicator {
+  background: #ee2b6c !important;
+  border-radius: 9999px !important;
+}
+
+/* Status bar */
+#uppy .uppy-StatusBar {
+  background: #ee2b6c !important;
+  border-radius: 9999px !important;
+  height: 3rem !important;
+  border: none !important;
+  box-shadow: 0 10px 15px -3px rgba(238, 43, 108, 0.3) !important;
+}
+
+#uppy .uppy-StatusBar-content {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+#uppy .uppy-StatusBar-actionBtn--upload {
+  background: white !important;
+  color: #ee2b6c !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  padding: 0.5rem 1.5rem !important;
+  border: none !important;
+  transition: background 0.2s !important;
+}
+
+#uppy .uppy-StatusBar-actionBtn--upload:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+#uppy .uppy-StatusBar-actionBtn--done {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  padding: 0.5rem 1.5rem !important;
+  border: none !important;
+}
+
+#uppy .uppy-StatusBar-actions {
+  gap: 0.5rem !important;
+}
+
+#uppy .uppy-StatusBar.is-complete {
+  background: #22c55e !important;
+  box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.3) !important;
+}
+
+#uppy .uppy-StatusBar.is-error {
+  background: #ef4444 !important;
+  box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.3) !important;
+}
+
+#uppy .uppy-ProgressBar {
+  background: #ee2b6c !important;
+  border-radius: 9999px !important;
+  height: 0.5rem !important;
+}
+
+/* Remove/Edit buttons */
+#uppy .uppy-Dashboard-Item-action--remove {
+  color: #ee2b6c !important;
+}
+
+#uppy .uppy-Dashboard-Item-action--remove:hover {
+  color: #d92560 !important;
+}
+
+/* Add more button */
+#uppy .uppy-DashboardContent-addMore {
+  background: rgba(238, 43, 108, 0.1) !important;
+  color: #ee2b6c !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  padding: 0.5rem 1.5rem !important;
+  transition: background 0.2s !important;
+}
+
+#uppy .uppy-DashboardContent-addMore:hover {
+  background: rgba(238, 43, 108, 0.2) !important;
+}
+
+/* Success checkmark */
+#uppy .uppy-Dashboard-Item-statusIcon svg {
+  fill: #22c55e !important;
+}
+
+/* Upload icon */
+#uppy .uppy-Dashboard-AddFiles-info svg {
+  fill: #89616f !important;
+}
+
+.dark #uppy .uppy-Dashboard-AddFiles-info svg {
+  fill: #a18c93 !important;
+}
+
+/* Success message styling */
+.success-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  background: rgba(34, 197, 94, 0.1);
+  padding: 1rem;
+  text-align: center;
+  color: #15803d;
+  font-weight: 500;
+  animation: slideIn 0.3s ease-out;
+}
+
+.dark .success-message {
+  color: #86efac;
+  background: rgba(34, 197, 94, 0.15);
+}
+
+.success-message::before {
+  content: "✓";
+  display: flex;
+  align-items: center;
+  justify-center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background: rgba(34, 197, 94, 0.2);
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #22c55e;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #uppy .uppy-StatusBar {
+    border-radius: 0.75rem !important;
+  }
+  
+  #uppy .uppy-Dashboard-AddFiles-title {
+    font-size: 0.9rem !important;
+  }
+}
